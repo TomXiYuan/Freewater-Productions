@@ -1,0 +1,27 @@
+.about-section {
+  background: var(--lavender);
+  padding: 30px max(6.5%, calc((100vw - var(--page-width)) / 2)) 90px;
+}
+/* ABOUT PAGE */
+.about-content {
+  max-width: 850px;
+  padding: 25px 0;
+}
+.about-content h3 {
+  font-size: clamp(28px, 4vw, 45px);
+  margin: 0 0 25px;
+}
+.about-content p {
+  font-size: 20px;
+  line-height: 1.8;
+}
+@media (max-width: 600px) {
+  .about-content p {
+    font-size: 17px;
+  }
+}
+@media (max-width: 600px) {
+  .about-section {
+    padding: 35px 6% 60px;
+  }
+}

@@ -1,0 +1,32 @@
+.section-title-row {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 8px;
+}
+.section-title-row h2 {
+  font-size: clamp(26px, 3.2vw, 40px);
+  font-weight: 950;
+  letter-spacing: -1.7px;
+  font-style: italic;
+  white-space: nowrap;
+  margin: 0;
+  color: var(--ink);
+}
+.section-title-row h2 span {
+  color: #5b21ee;
+}
+.section-title-line {
+  flex: 1;
+  min-width: 0;
+  height: 3px;
+  flex-shrink: 0;
+  background: var(--purple);
+}
+/* MOBILE */
+@media (max-width: 700px) {
+  .section-title-row h2 {
+    white-space: normal;
+    font-size: 28px;
+  }
+}

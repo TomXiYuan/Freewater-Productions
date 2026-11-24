@@ -1,19 +1,56 @@
-import { site } from '../siteContent.js';
+import { Link } from 'react-router-dom';
 
-export default function Hero() {
+export default function Hero({
+  titleFirst,
+  titleAccent,
+  subtitle,
+  image,
+  primaryButton,
+  secondaryButton
+}) {
   return (
     <section className="hero" id="home">
-      {/* Swap the hero image path in src/siteContent.js. */}
-      <div className="hero-photo" style={{ backgroundImage: `url('${site.hero.image}')` }} aria-hidden="true" />
+      <div
+        className="hero-photo"
+        style={{ backgroundImage: `url('${image}')` }}
+        aria-hidden="true"
+      />
       <div className="hero-shade" aria-hidden="true" />
+
       <div className="hero-content">
         <div className="hero-corners" aria-hidden="true" />
-        <h1>{site.hero.titleFirst}<br /><span>{site.hero.titleAccent}</span></h1>
-        <p>{site.hero.subtitle}</p>
-        <div className="hero-buttons">
-          <a className="button button-primary" href="#films"><span aria-hidden="true">▶</span> {site.hero.primaryButton}</a>
-          <a className="button button-outline" href="#get-involved">{site.hero.secondaryButton}</a>
-        </div>
+
+        <h1>
+          {titleFirst}
+          {titleAccent && (
+            <>
+              <br />
+              <span>{titleAccent}</span>
+            </>
+          )}
+        </h1>
+
+        {subtitle && <p>{subtitle}</p>}
+
+        {(primaryButton || secondaryButton) && (
+          <div className="hero-buttons">
+            {primaryButton && (
+              <Link className="button button-primary" to="/films">
+                <span aria-hidden="true">▶</span>
+                {primaryButton}
+              </Link>
+            )}
+
+            {secondaryButton && (
+              <Link
+                className="button button-outline"
+                to="/#get-involved"
+              >
+                {secondaryButton}
+              </Link>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );

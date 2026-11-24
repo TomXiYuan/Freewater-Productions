@@ -1,0 +1,118 @@
+/* hero.css */
+/* HERO: background photo on right, gradient on left */
+.hero {
+  position: relative;
+  min-height: max(675px, 55vh);
+  display: flex;
+  align-items: center;
+  background: var(--navy);
+  overflow: hidden;
+  color: white;
+}
+.hero-photo {
+  position: absolute;
+  z-index: 0;
+  inset: 0 0 0 33%;
+  background-size: cover;
+  background-position: center 35%;
+}
+.hero-shade {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(90deg, #080e2b 0%, #080e2bee 21%, #080e2bbd 39%, #080e2b30 65%, #080e2b16 100%), linear-gradient(180deg, #090c22c9 0%, transparent 37%, #090c2244 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(90%, var(--page-width));
+  margin: 0 auto;
+  padding: clamp(130px, 10vw, 150px) 20px 90px;
+}
+.hero h1 {
+  font-size: clamp(3rem, 9.5vw, 9.25rem);
+  letter-spacing: -0.045em;
+  font-weight: 950;
+  line-height: 0.92;
+  margin: 10px 0 15px;
+}
+.hero h1 span {
+  color: var(--mint);
+}
+.hero p {
+  font-size: clamp(1.125rem, 2.2vw, 1.75rem);
+  font-style: italic;
+  margin: 0 0 28px;
+  color: #f4f3fa;
+}
+.hero-buttons {
+  display: flex;
+  gap: clamp(12px, 1.5vw, 28px);
+  flex-wrap: wrap;
+}
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  min-height: 55px;
+  padding: 11px 24px;
+  border-radius: 17px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 850;
+  transition: transform .15s, background .15s, color .15s;
+}
+.button:hover {
+  transform: translateY(-2px);
+}
+.button-primary {
+  background: var(--mint);
+  color: #081124;
+}
+.button-primary:hover {
+  background: #7cf9eb;
+}
+.button-outline {
+  border: 2px solid #9d63fa;
+  color: #fff;
+  background: #080d24ab;
+}
+.button-outline:hover {
+  background: #9d63fa;
+}
+@media (max-width: 1050px) {
+  .hero-content {
+    padding-left: 7%;
+  }
+  .hero-corners {
+    left: 4%;
+  }
+}
+@media (max-width: 700px) {
+  .hero {
+    min-height: 510px;
+  }
+  .hero-photo {
+    left: 10%;
+    opacity: .8;
+    background-position: 45% center;
+  }
+  .hero-shade {
+    background: linear-gradient(90deg, #080e2bf7 0%, #080e2bce 58%, #080e2b55 100%), linear-gradient(0deg, #080e2b70 0%, transparent 100%);
+  }
+  .hero-content {
+    padding: 170px 7% 75px;
+  }
+  .hero-corners {
+    display: none;
+  }
+  .hero h1 {
+    font-size: clamp(47px, 11vw, 70px);
+    letter-spacing: -2.5px;
+  }
+  .hero p {
+    font-size: 17px;
+    max-width: 320px;
+  }
+}

@@ -34,7 +34,7 @@ export default function VideoModal({ film, onClose }) {
           <div className="video-placeholder">
             <span className="placeholder-icon" aria-hidden="true">▶</span>
             <h3>Your film goes here!</h3>
-            <p>Open <code>src/siteContent.js</code> and add a YouTube video ID to <code>{`films`}</code>.</p>
+            <p>Open <code>src/data/films.js</code> and add a YouTube video ID to a film.</p>
           </div>
         )}
       </div>

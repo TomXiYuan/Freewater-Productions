@@ -1,0 +1,129 @@
+/* navbar.css */
+/* NAVIGATION */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  padding: 0 max(6.5%, calc((100vw - var(--page-width)) / 2));
+  color: var(--white);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.brand-mark {
+  display: grid;
+  place-items: center;
+  font-size: 38px;
+  width: 35px;
+  height: 46px;
+  line-height: 1;
+  color: var(--white);
+}
+.brand-name {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -.9px;
+  line-height: .9;
+  white-space: pre-line;
+}
+.affiliation {
+  border-left: 1px solid #ffffff7a;
+  padding-left: 27px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  color: #ece9f7;
+}
+.affiliation span {
+  padding: 0 8px;
+}
+.nav-links {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+.nav-link {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 800;
+  white-space: nowrap;
+  transition: color 160ms;
+}
+.nav-link:hover {
+  color: var(--mint);
+}
+.nav-join {
+  border: 2px solid #a05cff;
+  border-radius: 24px;
+  padding: 10px 25px;
+}
+.nav-join:hover {
+  background: #a05cff;
+  color: var(--white);
+}
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: white;
+  font-size: 27px;
+  cursor: pointer;
+}
+@media (max-width: 1050px) {
+  .site-header {
+    gap: 17px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .affiliation {
+    display: none;
+  }
+  .nav-links {
+    gap: 24px;
+  }
+}
+@media (max-width: 700px) {
+  .site-header {
+    height: 76px;
+  }
+  .brand-name {
+    font-size: 17px;
+  }
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    background: #090c22fa;
+    padding: 20px 7% 27px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+  .nav-links.is-open {
+    display: flex;
+  }
+  .nav-link {
+    padding: 6px 0;
+  }
+  .nav-join {
+    text-align: center;
+  }
+}

@@ -1,0 +1,20 @@
+export const catalogFilms = [
+  {
+    id: 1,
+    title: 'rick-roll',
+    image: '/images/rick-roll.jpg',
+    youtubeId: ''
+  },
+  {
+    id: 2,
+    title: 'sooubway',
+    image: '/images/sooubway.jpeg',
+    youtubeId: ''
+  },
+  {
+    id: 3,
+    title: 'gotham-chess',
+    image: '/images/gotham-chess.jpg',
+    youtubeId: ''
+  }
+];

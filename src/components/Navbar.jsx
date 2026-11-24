@@ -1,5 +1,10 @@
+
 import { useState } from 'react';
-import { site } from '../siteContent.js';
+import { NavLink, Link } from 'react-router-dom';
+
+const SITE_NAME = 'FREEWATER\nPRODUCTIONS';
+const UNIVERSITY = 'DUKE UNIVERSITY';
+const AFFILIATION = 'DUU';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -7,12 +12,15 @@ export default function Navbar() {
 
   return (
     <header className="site-header">
-      <a className="brand" href="#home" onClick={closeMenu} aria-label="Freewater Productions home">
+      <Link className="brand" to="/" onClick={closeMenu}
+        aria-label="Freewater Productions home">
         <span className="brand-mark" aria-hidden="true">◉</span>
-        <span className="brand-name">{site.name}</span>
-      </a>
+        <span className="brand-name">{SITE_NAME}</span>
+      </Link>
 
-      <div className="affiliation">{site.university} <span>×</span> {site.affiliation}</div>
+      <div className="affiliation">
+        {UNIVERSITY} <span>×</span> {AFFILIATION}
+      </div>
 
       <button
         className="menu-toggle"
@@ -24,11 +32,13 @@ export default function Navbar() {
         {menuOpen ? '✕' : '☰'}
       </button>
 
-      <nav className={`nav-links ${menuOpen ? 'is-open' : ''}`} aria-label="Main navigation">
-        <a className="nav-link" href="#home" onClick={closeMenu}>HOME</a>
-        <a className="nav-link" href="#films" onClick={closeMenu}>FILMS</a>
-        <a className="nav-link" href="#about" onClick={closeMenu}>ABOUT</a>
-        <a className="nav-link nav-join" href="#get-involved" onClick={closeMenu}>GET INVOLVED</a>
+      <nav className={`nav-links ${menuOpen ? 'is-open' : ''}`}
+        aria-label="Main navigation">
+        <NavLink className="nav-link" to="/" end onClick={closeMenu}>HOME</NavLink>
+        <NavLink className="nav-link" to="/films" onClick={closeMenu}>FILMS</NavLink>
+        <NavLink className="nav-link" to="/about" onClick={closeMenu}>ABOUT</NavLink>
+        <Link className="nav-link nav-join" to="/#get-involved"
+          onClick={closeMenu}>GET INVOLVED</Link>
       </nav>
     </header>
   );
