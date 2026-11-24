@@ -15,12 +15,24 @@
   inset: 0 0 0 33%;
   background-size: cover;
   background-position: center 35%;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 22%, #000 78%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 22%, #000 78%, transparent 100%);
 }
 .hero-shade {
   position: absolute;
   z-index: 1;
   inset: 0;
-  background: linear-gradient(90deg, #080e2b 0%, #080e2bee 21%, #080e2bbd 39%, #080e2b30 65%, #080e2b16 100%), linear-gradient(180deg, #090c22c9 0%, transparent 37%, #090c2244 100%);
+  background:
+    linear-gradient(180deg, #090c22e6 0%, transparent 35%),
+    linear-gradient(90deg, #080e2b 0%, #080e2bf5 28%, #080e2bd9 48%, #080e2b66 75%, #080e2b40 100%);
+}
+
+@media (max-width: 700px) {
+  .hero-shade {
+    background:
+      linear-gradient(180deg, #090c22e6 0%, transparent 35%),
+      linear-gradient(90deg, #080e2b 0%, #080e2be6 65%, #080e2b80 100%);
+  }
 }
 .hero-content {
   position: relative;
@@ -99,7 +111,7 @@
     background-position: 45% center;
   }
   .hero-shade {
-    background: linear-gradient(90deg, #080e2bf7 0%, #080e2bce 58%, #080e2b55 100%), linear-gradient(0deg, #080e2b70 0%, transparent 100%);
+    background: linear-gradient(90deg, #080e2bf7 0%, #080e2bce 58%, #080e2b55 100%);
   }
   .hero-content {
     padding: 170px 7% 75px;

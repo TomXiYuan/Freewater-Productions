@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { films } from '../data/films.js';
+import { films } from '../data/carouselFilms.js';
 
 export default function FilmGallery({ onSelectFilm }) {
   const [selected, setSelected] = useState(0);
